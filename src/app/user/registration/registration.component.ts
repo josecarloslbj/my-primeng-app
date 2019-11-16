@@ -12,22 +12,33 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class RegistrationComponent implements OnInit {
 
   user: userLogin = new userLogin();
-  myForm: FormGroup;
+
 
   constructor(public service: UserService,
     // tslint:disable-next-line: align
     fb: FormBuilder
   ) {
 
-    // tslint:disable-next-line: new-parens
-    this.myForm = fb.group(new userLogin());
+    // tslint:disable-next-line: new-parens 
+
   }
 
   ngOnInit() {
     this.service.formModel.reset();
   }
 
+  criarCadastro() {
+
+    return false;
+  }
+
   onSubmit() {
+
+    if (!this.service.formModel.valid) {
+      alert('opis');
+      return;
+    }
+
     this.service.register().subscribe(
       (res: any) => {
         if (res.succeeded) {

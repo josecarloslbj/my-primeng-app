@@ -3,7 +3,8 @@ export class userLogin {
     userID: any = '';
     accessKey: any = '';
     name = '';
-    login = '';
     email = '';
+    login = '';
     password = '';
+    confirmPassword = '';
 }

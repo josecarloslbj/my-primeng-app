@@ -12,6 +12,8 @@
     height: -webkit-fill-available;
     position: absolute;
     background-color: #949494;
+    background-image: url('https://i.ytimg.com/vi/g55cDsjzitg/maxresdefault.jpg');
+    background-repeat: round;
 }
 
 h2 {
