@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   mensagem: any = '';
 
   constructor(private service: UserService,
-              private router: Router
+    private router: Router
     ,         //private toastr: ToastrService
   ) { }
 
@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
+
   onSubmit(form: NgForm) {
     this.service.login(form.value).subscribe(
       (res: any) => {

@@ -1,0 +1,6 @@
+.linha{
+    display: grid;
+    height: -webkit-fill-available;
+    background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Designer-Wallpaper-Background-22.jpg');
+    padding:"70px 0px";
+}

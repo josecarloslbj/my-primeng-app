@@ -1,17 +1,27 @@
 import { UserService } from './../../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 // import { ToastrService } from 'ngx-toastr';
+import { userLogin } from './../../shared/user.model';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
-  styles: []
+  styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(public service: UserService
-    // , private toastr: ToastrService
-  ) { }
+  user: userLogin = new userLogin();
+  myForm: FormGroup;
+
+  constructor(public service: UserService,
+    // tslint:disable-next-line: align
+    fb: FormBuilder
+  ) {
+
+    // tslint:disable-next-line: new-parens
+    this.myForm = fb.group(new userLogin());
+  }
 
   ngOnInit() {
     this.service.formModel.reset();
