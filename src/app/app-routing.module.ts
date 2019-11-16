@@ -5,10 +5,10 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { LoginComponent } from './user/login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './auth/auth.guard';
-
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/user/login', pathMatch: 'full'},
+  { path: '', redirectTo: '/user/login', pathMatch: 'full' },
   {
     path: 'user', component: UserComponent,
     children: [
@@ -16,11 +16,12 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent }
     ]
   },
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]}
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    FormsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

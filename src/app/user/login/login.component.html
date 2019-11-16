@@ -1,16 +1,59 @@
-<img src="/assets/img/single_user.png" class="mx-auto d-block">
-<form #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
-  <div class="form-group">
-    <label>Username</label>
-    <input class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required>
+<div class="areaLogin">
+  <div class="areaFormulario" id="logreg-forms">
+    <form class="form-signin">
+      <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Acesse sua conta</h1>
+      <div class="social-login">
+        <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Acessar com o
+            Facebook</span> </button>
+        <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Acessar com o
+            Google</span> </button>
+      </div>
+      <p style="text-align:center"> OU </p>
+      <input type="email" id="inputEmail" [(ngModel)]="user.userID" name="userID" class="form-control"
+        placeholder="Login" required="" autofocus="">
+      <input type="password" id="inputPassword" [(ngModel)]="user.accessKey" name="accessKey" class="form-control"
+        placeholder="Senha" required="">
+
+      <a class="btn btn-success btn-block" href="#" (click)="efetuarLogin($event);"><i class="fas fa-sign-in-alt"></i>
+        Entrar</a>
+      <a href="#" id="forgot_pswd">Esqueceu a senha?</a>
+      <hr>
+      <!-- <p>Don't have an account!</p>  -->
+      <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Criar
+        conta</button>
+    </form>
+
+    <form action="/reset/password/" class="form-reset">
+      <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+      <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
+      <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+    </form>
+
+    <form action="/signup/" class="form-signup">
+      <div class="social-login">
+        <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with
+            Facebook</span> </button>
+      </div>
+      <div class="social-login">
+        <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with
+            Google+</span> </button>
+      </div>
+
+      <p style="text-align:center">OR</p>
+
+      <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
+      <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+      <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+      <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required
+        autofocus="">
+
+      <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+      <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+    </form>
+    <br>
   </div>
-  <div class="form-group">
-    <label>Password</label>
-    <input type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-8 offset-md-2">
-      <button type="submit" class="btn btn-lg btn-block" [disabled]="form.invalid">Login</button>
-    </div>
-  </div>
-</form>
+</div>
+
+<p-sidebar [(visible)]="visibleSidebar" position="bottom" [baseZIndex]="10000">
+    {{ mensagem }}
+</p-sidebar>

@@ -1,13 +1,37 @@
-<div class="wrapper">
-    <div class="wrapped-div">
-      <div class="tab-header">
-        <h2 routerLink='/user/login' routerLinkActive='active'>Sign In</h2>
-        <h2 routerLink='/user/registration' routerLinkActive='active'>Sign Up</h2>
-      </div>
-      <div class="row">
-        <div class="col-md-10 offset-md-1">
-          <router-outlet></router-outlet>
+<!-- <p-panel [transitionOptions]="'5ms'">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Custom Header</span>
+            <p-splitButton [style]="{'float':'right'}" label="Save" icon="pi pi-check" (onClick)="save()"
+                [model]="items"></p-splitButton>
         </div>
-      </div>
+    </p-header>
+    <div class="wrapper">
+        <div class="wrapped-div">
+            <div class="tab-header">
+                <h2 routerLink='/user/login' routerLinkActive='active'>Efetuar Login</h2>
+                <h2 routerLink='/user/registration' routerLinkActive='active' class="ui-button-success" style="cursor: pointer">Cadastrar</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <p-footer>
+            <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em"></button>
+            <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success"></button>
+        </p-footer>
+</p-panel> -->
+
+
+<div class="row" style="
+    display: grid;
+ height: -webkit-fill-available;
+ background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Designer-Wallpaper-Background-22.jpg');
+ padding:70px 0px">
+
+    <router-outlet></router-outlet>
+
+</div>

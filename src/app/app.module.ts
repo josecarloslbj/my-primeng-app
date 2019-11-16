@@ -11,6 +11,19 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { UserComponent } from './user/user.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ButtonModule} from 'primeng/button';
+import {PanelModule} from 'primeng/panel';
+import {TabViewModule} from 'primeng/tabview';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {InputTextModule} from 'primeng/inputtext';
+
+import { MenuComponent } from './core/menu/menu.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { EstruturaModule } from './core/estrutura.module';
+import {AccordionModule} from 'primeng/accordion';
+import {SidebarModule} from 'primeng/sidebar';
+//import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -18,18 +31,28 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     UserComponent,
     RegistrationComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     // ToastrModule.forRoot({
     //   progressBar: true
     // }),
-    FormsModule
+    FormsModule,
+    ButtonModule,
+    PanelModule,
+    TabViewModule,
+    SplitButtonModule,
+    InputTextModule,
+    EstruturaModule,
+    AccordionModule,
+    SidebarModule
   ],
   providers: [UserService, {
     provide: HTTP_INTERCEPTORS,
